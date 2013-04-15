@@ -1,0 +1,85 @@
+[
+    {
+        "name" : "assignedTeam",
+        "group" : "RelationshipType",
+        "arr": [
+            {"key": "asd"},
+            {"key": "bsd"},
+            {"key": "absd"},
+            {"key": "csd"}
+        ],
+        "systemProperties" : {
+            "createdOn" : 1364826904803
+        }
+    },
+    {
+        "name" : "assignee",
+        "group" : "RelationshipType",
+        "arr": [
+            {"key": "asd"},
+            {"key": "bsd"},
+            {"key": "csd"}
+        ],
+        "systemProperties" : {
+            "createdOn" : 1364826904804,
+            "tenant" : "hello world"
+        }
+    },
+    {
+        "name" : "associatedDocument",
+        "group" : "RelationshipType",
+        "systemProperties" : {
+            "createdOn" : 1364826904804
+        }
+    },
+    {
+        "name" : "booking",
+        "group" : "RelationshipType",
+        "systemProperties" : {
+            "createdOn" : 1364826904805
+        }
+    },
+    {
+        "name" : "company",
+        "group" : "RelationshipType",
+        "systemProperties" : {
+            "createdOn" : 1364826904805
+        }
+    },
+    {
+        "name" : "contact",
+        "group" : "RelationshipType",
+        "systemProperties" : {
+            "createdOn" : 1364826904806
+        }
+    },
+    {
+        "name" : "contacted",
+        "group" : "RelationshipType",
+        "systemProperties" : {
+            "createdOn" : 1364826904807
+        }
+    },
+    {
+        "name" : "covered",
+        "group" : "RelationshipType",
+        "systemProperties" : {
+            "createdOn" : 1364826904807
+        }
+    },
+    {
+        "name" : "customer",
+        "group" : "RelationshipType",
+        "systemProperties" : {
+            "createdOn" : 1364826904808,
+            "tenant" : "master"
+        }
+    },
+    {
+        "name" : "delivery",
+        "group" : "RelationshipType",
+        "systemProperties" : {
+            "createdOn" : 1364826904808
+        }
+    }
+]
