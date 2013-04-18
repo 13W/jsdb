@@ -110,13 +110,26 @@ test.save({_id: 'index1', name: 'hello', i: 75});
 test.save({_id: 'index3', name: 'hello53', i: 25});
 //console.inspect(test.find({$or: [{_id: 'index1', name: 'hello2'}, {_id: 'index3'}]}).toArray());
 
-test.group({
-    key: {_id:1},
-    initial: {count: 0},
-    reduce: function(data, initial) {
-        initial.count++;
-    }
-}, function(error, response) {console.inspect(error, response)});
+//test.group({
+//    key: {_id:1},
+//    initial: {count: 0},
+//    reduce: function(data, initial) {
+//        initial.count++;
+//    }
+//}, function(error, response) {console.inspect(error, response)});
+
+test.mapReduce(
+    function() {
+        emit(this._id, this.i);
+    },
+    function(key, values) {
+        var o = 0;
+        for (var i in values) o+=values[i];
+        return o;
+    },
+    {query: {}},
+    console.inspect
+);
 
 //console.inspect(test._index);
 //test.update({_id: 'index2'}, {$set: {_id: 'index1'}}, {sync: true});
