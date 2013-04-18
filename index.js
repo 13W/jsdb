@@ -113,6 +113,6 @@ test.save({_id: 'index3', name: 'hello53', i: 25});
 //console.inspect(test._index);
 //test.update({_id: 'index2'}, {$set: {_id: 'index1'}}, {sync: true});
 //test.remove({_id: 'index3'}, {sync: true});
-console.warn(test.find({_id: 'index1'}).sort({i: 1}).skip(2).limit(2).toArray());
+console.warn(test.find({_id: 'index1'}, {name:1, i:1}).sort({i: 1}).skip(2).limit(2).toArray());
 //console.inspect(test.findOne({_id: 'index3'}));
 //test.remove({_id:})
