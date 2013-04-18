@@ -103,16 +103,24 @@ var test = db.getCollection('test');
 test.save({_id: 'index1', name: 'hello1', i: 45});
 test.save({_id: 'index1', name: 'hello2', i: 23});
 test.save({_id: 'index1', name: 'hello5', i: 22});
-test.save({_id: 'index1', name: 'hello3', i: 67});
-test.save({_id: 'index1', name: 'hello66', i: 664});
+test.save({_id: 'index2', name: 'hello3', i: 67});
+test.save({_id: 'index2', name: 'hello66', i: 664});
 test.save({_id: 'index1', name: 'hello43', i:2});
 test.save({_id: 'index1', name: 'hello', i: 75});
 test.save({_id: 'index3', name: 'hello53', i: 25});
 //console.inspect(test.find({$or: [{_id: 'index1', name: 'hello2'}, {_id: 'index3'}]}).toArray());
 
+test.group({
+    key: {_id:1},
+    initial: {count: 0},
+    reduce: function(data, initial) {
+        initial.count++;
+    }
+}, function(error, response) {console.inspect(error, response)});
+
 //console.inspect(test._index);
 //test.update({_id: 'index2'}, {$set: {_id: 'index1'}}, {sync: true});
 //test.remove({_id: 'index3'}, {sync: true});
-console.warn(test.find({_id: 'index1'}, {name:1, i:1}).sort({i: 1}).skip(2).limit(2).toArray());
+//console.warn(test.find({_id: 'index1'}, {name:1, i:1}).sort({i: 1}).skip(2).limit(2).toArray());
 //console.inspect(test.findOne({_id: 'index3'}));
 //test.remove({_id:})
