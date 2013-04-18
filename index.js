@@ -100,14 +100,14 @@ console.inspect(z.find().toArray());
 */
 
 var test = db.getCollection('test');
-test.save({_id: 'index1', name: 'hello1', i: 45});
-test.save({_id: 'index1', name: 'hello2', i: 23});
-test.save({_id: 'index1', name: 'hello5', i: 22});
-test.save({_id: 'index2', name: 'hello3', i: 67});
-test.save({_id: 'index2', name: 'hello66', i: 664});
-test.save({_id: 'index1', name: 'hello43', i:2});
-test.save({_id: 'index1', name: 'hello', i: 75});
-test.save({_id: 'index3', name: 'hello53', i: 25});
+test.save({id: 'index1', name: 'hello1', i: 45});
+test.save({id: 'index1', name: 'hello2', i: 23});
+test.save({id: 'index1', name: 'hello5', i: 22});
+test.save({id: 'index2', name: 'hello3', i: 67});
+test.save({id: 'index2', name: 'hello66', i: 664});
+test.save({id: 'index1', name: 'hello43', i:2});
+test.save({id: 'index1', name: 'hello', i: 75});
+test.save({id: 'index3', name: 'hello53', i: 25});
 //console.inspect(test.find({$or: [{_id: 'index1', name: 'hello2'}, {_id: 'index3'}]}).toArray());
 
 //test.group({
@@ -117,10 +117,13 @@ test.save({_id: 'index3', name: 'hello53', i: 25});
 //        initial.count++;
 //    }
 //}, function(error, response) {console.inspect(error, response)});
-
+//console.inspect(test.find().toArray());
 test.mapReduce(
     function() {
-        emit(this._id, this.i);
+        /*
+         //noinspection JSUnresolvedFunction
+         */
+        emit(this.id, this.i);
     },
     function(key, values) {
         var o = 0;
@@ -130,7 +133,6 @@ test.mapReduce(
     {query: {}},
     console.inspect
 );
-
 //console.inspect(test._index);
 //test.update({_id: 'index2'}, {$set: {_id: 'index1'}}, {sync: true});
 //test.remove({_id: 'index3'}, {sync: true});
