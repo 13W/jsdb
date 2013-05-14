@@ -11,6 +11,13 @@ var c = db.getCollection('testFind', {
 });
 module.exports = db;
 
+var testItem = c.find({"name" : "assignee"}).subCollection('systemProperties');
+
+console.inspect(testItem.find().toArray());
+testItem.update({}, {$set: {tenant: 'yeap!'}}, {sync: true});
+console.inspect(c.find({"name" : "assignee"}).find().toArray());
+
+/*
 console.inspect(
     c.find({'systemProperties.createdOn': {$not: {$in: [1364826904804, 1364826904808, 1364826904805]}}})
         .subCollection('arr')
@@ -19,6 +26,7 @@ console.inspect(
         .toArray()
 //        .data
 );
+*/
 /*
 console.inspect(
     c.find({'systemProperties.createdOn': {$in: [1364826904803, 1364826904808, 1364826904805]}})
