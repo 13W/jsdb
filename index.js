@@ -11,7 +11,6 @@ var c = db.getCollection('testFind', {
 });
 module.exports = db;
 
-/*
 console.inspect(
     c.find({'systemProperties.createdOn': {$not: {$in: [1364826904804, 1364826904808, 1364826904805]}}})
         .subCollection('arr')
@@ -20,12 +19,13 @@ console.inspect(
         .toArray()
 //        .data
 );
-*/
+/*
 console.inspect(
     c.find({'systemProperties.createdOn': {$in: [1364826904803, 1364826904808, 1364826904805]}})
         .subCollection('systemProperties').find({tenant: {$exists: true}}, {tenant:1, _id: 0})
         .toArray()
 );
+*/
 /*
 console.inspect(c.find({$and:[{'systemProperties.createdOn': {$gte: 1364826904803}}, {'systemProperties.createdOn': {$lte: 1364826904804}}]}).toArray());
 */
