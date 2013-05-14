@@ -85,6 +85,7 @@ console.inspect(c.find(
     }
 ).toArray());
 */
+/*
 console.inspect(c.find({
     $and:[
         {
@@ -98,6 +99,7 @@ console.inspect(c.find({
         }
     ]
 }).toArray());
+*/
 //console.inspect(c.find({'arr.key': 'csd'}).toArray());
 //console.inspect(c.find({'sdasdasd': 'csd'}).toArray());
 
@@ -128,21 +130,26 @@ test.save({id: 'index2', name: 'hello66', i: 664});
 test.save({id: 'index1', name: 'hello43', i:2});
 test.save({id: 'index1', name: 'hello', i: 75});
 test.save({id: 'index3', name: 'hello53', i: 25});
+*/
+//console.inspect(test.find({}).toArray());
 //console.inspect(test.find({$or: [{_id: 'index1', name: 'hello2'}, {_id: 'index3'}]}).toArray());
 
-//test.group({
-//    key: {_id:1},
-//    initial: {count: 0},
-//    reduce: function(data, initial) {
-//        initial.count++;
-//    }
-//}, function(error, response) {console.inspect(error, response)});
+/*
+test.group({
+    key: {id:1},
+    initial: {count: 0},
+    reduce: function(data, initial) {
+        initial.count++;
+    }
+}, function(error, response) {console.inspect(error, response)});
+*/
 //console.inspect(test.find().toArray());
+/*
 test.mapReduce(
     function() {
-        *//*
+        
          //noinspection JSUnresolvedFunction
-         *//*
+         
         emit(this.id, this.i);
     },
     function(key, values) {
@@ -154,9 +161,11 @@ test.mapReduce(
     console.inspect
 );
 */
-//console.inspect(test._index);
-//test.update({_id: 'index2'}, {$set: {_id: 'index1'}}, {sync: true});
-//test.remove({_id: 'index3'}, {sync: true});
-//console.warn(test.find({_id: 'index1'}, {name:1, i:1}).sort({i: 1}).skip(2).limit(2).toArray());
-//console.inspect(test.findOne({_id: 'index3'}));
+/*
+console.inspect(test._index);
+test.update({id: 'index2'}, {$set: {id: 'index1'}}, {sync: true});
+test.remove({id: 'index3'}, {sync: true});
+console.warn(test.find({id: 'index1'}, {name:1, i:1}).sort({i: 1}).skip(2).limit(2).toArray());
+console.inspect(test.findOne({id: 'index3'}));
+*/
 //test.remove({_id:})
