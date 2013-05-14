@@ -21,13 +21,11 @@ console.inspect(
 //        .data
 );
 */
-/*
 console.inspect(
     c.find({'systemProperties.createdOn': {$in: [1364826904803, 1364826904808, 1364826904805]}})
-        .subCollection('systemProperties').find({tenant: {$exists: false}}, {tenant:1})
+        .subCollection('systemProperties').find({tenant: {$exists: true}}, {tenant:1, _id: 0})
         .toArray()
 );
-*/
 /*
 console.inspect(c.find({$and:[{'systemProperties.createdOn': {$gte: 1364826904803}}, {'systemProperties.createdOn': {$lte: 1364826904804}}]}).toArray());
 */
@@ -98,7 +96,7 @@ console.inspect(z.find().toArray());
 z.update({},{$pullAll: {hello: [{'my.name': 'vovik'}, 'pipka']}}, {sync: true});
 console.inspect(z.find().toArray());
 */
-
+/*
 var test = db.getCollection('test');
 test.save({id: 'index1', name: 'hello1', i: 45});
 test.save({id: 'index1', name: 'hello2', i: 23});
@@ -120,9 +118,9 @@ test.save({id: 'index3', name: 'hello53', i: 25});
 //console.inspect(test.find().toArray());
 test.mapReduce(
     function() {
-        /*
+        *//*
          //noinspection JSUnresolvedFunction
-         */
+         *//*
         emit(this.id, this.i);
     },
     function(key, values) {
@@ -133,6 +131,7 @@ test.mapReduce(
     {query: {}},
     console.inspect
 );
+*/
 //console.inspect(test._index);
 //test.update({_id: 'index2'}, {$set: {_id: 'index1'}}, {sync: true});
 //test.remove({_id: 'index3'}, {sync: true});
