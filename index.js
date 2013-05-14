@@ -11,11 +11,13 @@ var c = db.getCollection('testFind', {
 });
 module.exports = db;
 
+/*
 var testItem = c.find({"name" : "assignee"}).subCollection('systemProperties');
 
 console.inspect(testItem.find().toArray());
 testItem.update({}, {$set: {tenant: 'yeap!'}}, {sync: true});
 console.inspect(c.find({"name" : "assignee"}).find().toArray());
+*/
 
 /*
 console.inspect(
@@ -83,7 +85,19 @@ console.inspect(c.find(
     }
 ).toArray());
 */
-//console.inspect(c.find({$and:[{'systemProperties.createdOn' :{$or:[1364826904803, 1364826904808]}}, {'arr.key':'absd'}]}).toArray());
+console.inspect(c.find({
+    $and:[
+        {
+            'systemProperties.createdOn' :{
+                $or:
+                    [1364826904803, 1364826904808]
+            }
+        }, 
+        {
+            'arr.key':'absd'
+        }
+    ]
+}).toArray());
 //console.inspect(c.find({'arr.key': 'csd'}).toArray());
 //console.inspect(c.find({'sdasdasd': 'csd'}).toArray());
 
