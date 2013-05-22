@@ -1,4 +1,4 @@
-require('lo');
+//require('lo');
 var Db = require('./lib/db').Db,
     db = Db.init();
 

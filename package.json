@@ -9,9 +9,13 @@
   "dependencies": {
     "lo": "~0.1.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+      "lo": "*",
+      "node-memwatch": "*",
+      "JSONPath": "*"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "(cd tests;node test)"
   },
   "repository": {
     "type": "git",
