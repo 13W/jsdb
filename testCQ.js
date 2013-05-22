@@ -19,6 +19,7 @@ var o = {
     ]
 };
 var start = new Date().getTime();
+methods.$query.$update = methods.queries.$update;
 var cq = new queryCompiler({}, {
     $and: [
         {
