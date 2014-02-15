@@ -11,8 +11,9 @@
   },
   "devDependencies": {
       "lo": "*",
-      "node-memwatch": "*",
-      "JSONPath": "*"
+      "memwatch": "*",
+      "JSONPath": "*",
+      "native-deep-extend": "*"
   },
   "scripts": {
     "test": "(cd tests;node test)"
@@ -21,7 +22,7 @@
     "type": "git",
     "url": "https://github.com/da-vinci/jsdb.git"
   },
-  "author": "Vladimir <zero@cetku.net>",
+  "author": "Vladimir <xx@ccxx.cc>",
   "license": "BSD",
   "readmeFilename": "README.md",
   "gitHead": "774a2d10224def505e10e6f2783053da068293f0"
