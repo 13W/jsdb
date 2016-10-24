@@ -1,8 +1,9 @@
 {
-  "name": "jsdb",
+  "name": "node-db.js",
   "version": "0.1.0",
   "description": "JavaScript implementation of Mongo Database",
   "main": "index.js",
+  "keywords": ["db", "filter", "mongo", "mongodb", "query", "array"],
   "directories": {
     "test": "tests"
   },

@@ -8,9 +8,9 @@ $ node test
 Complete loading data set, length: 18801
 Request time: Mingo: 122.072ms
 Counts: 81
-Request time: Bout Compiled: 126.694ms
+Request time: Bout: 126.694ms
 Counts: 81
-Request time: Sift Compiled: 33.379ms
+Request time: Sift: 33.379ms
 Counts: 81
 Request time: JsDB: 16.611ms
 Counts: 81
