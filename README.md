@@ -12,7 +12,7 @@ Request time: Bout: 126.694ms
 Counts: 81
 Request time: Sift: 33.379ms
 Counts: 81
-Request time: JsDB: 16.611ms
+Request time: FunnyDB: 16.611ms
 Counts: 81
 Request time: Direct Filter: 5.562ms
 Counts: 81
